@@ -7,6 +7,10 @@ import { Analytics } from '@vercel/analytics/react';
 export const metadata: Metadata = {
     title: 'Henrique Barucco',
     description: 'Portfólio de Henrique Barucco - Desenvolvedor Fullstack',
+    robots: {
+        index: true,
+        follow: true,
+    }
 };
 
 export default function RootLayout({
