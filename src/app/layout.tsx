@@ -22,7 +22,7 @@ export default function RootLayout({
         <html lang="pt-BR">
             <body className="flex flex-col min-h-screen">
                 <Navbar/>
-                <main className="flex-grow">
+                <main className="flex flex-grow">
                     {children}
                 </main>
                 <footer className="bg-base-100 text-white py-4 text-center text-sm">
