@@ -1,8 +1,9 @@
+import Link from 'next/link';
 import ChangeDarkmode from './change-darkmode';
 
 export default function Navbar() {
     return (
-        <div className="navbar bg-base-100">
+        <div className="fixed navbar bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -10,13 +11,17 @@ export default function Navbar() {
                     </label>
                     
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Sobre mim</a></li>
+                        <li>
+                            <Link href={'#sobre'}>
+                                Sobre mim
+                            </Link>
+                        </li>
                         <li><a>Projetos</a></li>
                         <li><a>Contato</a></li>
                     </ul>
                 </div>
                 <ul className="menu menu-horizontal px-1 hidden lg:flex">
-                    <li><a>Sobre mim</a></li>
+                    <li><a href="#sobre">Sobre mim</a></li>
                     <li><a>Projetos</a></li>
                     <li><a>Contato</a></li>
                 </ul>
