@@ -2,6 +2,7 @@ import Navbar from '@/components/navbar';
 import './globals.css';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
     title: 'Henrique Barucco',
@@ -25,6 +26,7 @@ export default function RootLayout({
                         Desenvolvido por Henrique Barucco.
                     </Link>
                 </footer>
+                <Analytics />
             </body>
         </html>
     );
