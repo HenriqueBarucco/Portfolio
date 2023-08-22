@@ -1,8 +1,7 @@
+import Navbar from '@/components/navbar';
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
+import Link from 'next/link';
 
 export const metadata: Metadata = {
     title: 'Henrique Barucco',
@@ -16,7 +15,17 @@ export default function RootLayout({
 }) {
     return (
         <html lang="pt-BR">
-            <body className={inter.className}>{children}</body>
+            <body className="flex flex-col min-h-screen">
+                <Navbar/>
+                <main className="flex-grow">
+                    {children}
+                </main>
+                <footer className="bg-base-100 text-white py-4 text-center text-sm">
+                    <Link href={'https://github.com/henriquebarucco'} target='_blank'>
+                        Desenvolvido por Henrique Barucco.
+                    </Link>
+                </footer>
+            </body>
         </html>
     );
 }
