@@ -9,7 +9,7 @@ export default function Main() {
                 </div>
             </div>
             <div>
-                <h2 className='text-4xl'>Henrique Barucco</h2>
+                <h2 className='text-4xl font-bold'>Henrique Barucco</h2>
                 <p>Desenvolvedor Fullstack</p>
             </div>
         </div>
