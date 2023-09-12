@@ -1,8 +1,8 @@
-import Navbar from '@/components/navbar';
 import './globals.css';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Analytics } from '@vercel/analytics/react';
+import Navbar from '@/components/navbar/navbar';
 
 export const metadata: Metadata = {
     title: 'Henrique Barucco',

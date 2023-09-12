@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import ChangeDarkmode from './change-darkmode';
-import EditDialog from './edit-dialog';
+import EditDialog from '../dialog/edit-dialog';
 
 export default function Navbar() {
     return (

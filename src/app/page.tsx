@@ -1,8 +1,9 @@
-import AboutMe from '@/components/about-me';
-import Education from '@/components/education';
-import Experiences from '@/components/experiences';
+import AboutMe from '@/components/about/about-me';
+import Education from '@/components/about/education';
+import Experiences from '@/components/about/experiences';
+import Skills from '@/components/about/skills';
 import Main from '@/components/main';
-import Skills from '@/components/skills';
+
 
 export default function Home() {
     return (
