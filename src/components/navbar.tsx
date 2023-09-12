@@ -13,18 +13,30 @@ export default function Navbar() {
                     
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         <li>
-                            <Link href={'#sobre'}>
+                            <Link href={'/#sobre'}>
                                 Sobre mim
                             </Link>
                         </li>
                         <li><a>Projetos</a></li>
-                        <li><a>Contato</a></li>
+                        <li>
+                            <Link href={'/contato'}>
+                                Contato
+                            </Link>
+                        </li>
                     </ul>
                 </div>
                 <ul className="menu menu-horizontal px-1 hidden lg:flex">
-                    <li><a href="#sobre">Sobre mim</a></li>
+                    <li>
+                        <Link href={'/#sobre'}>
+                                Sobre mim
+                        </Link>
+                    </li>
                     <li><a>Projetos</a></li>
-                    <li><a>Contato</a></li>
+                    <li>
+                        <Link href={'/contato'}>
+                                Contato
+                        </Link>
+                    </li>
                 </ul>
             </div>
             <div className="navbar-end space-x-3">
