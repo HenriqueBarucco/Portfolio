@@ -1,8 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { Analytics } from '@vercel/analytics/react';
 import Navbar from '@/components/navbar/navbar';
+import Footer from '@/components/footer/footer';
 
 export const metadata: Metadata = {
     title: 'Henrique Barucco',
@@ -25,11 +25,7 @@ export default function RootLayout({
                 <main className="flex flex-grow">
                     {children}
                 </main>
-                <footer className="bg-base-100 text-white py-4 text-center text-sm">
-                    <Link href={'https://github.com/henriquebarucco'} target='_blank'>
-                        Desenvolvido por Henrique Barucco.
-                    </Link>
-                </footer>
+                <Footer/>
                 <Analytics />
             </body>
         </html>

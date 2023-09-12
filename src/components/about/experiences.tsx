@@ -11,7 +11,7 @@ export default function Experiences() {
                         <p className='grow text-end'>Agosto 2022 - Atual</p>
                     </div>
                     <div>
-                        <p className='text-start'>Desenvolvedor Backend JR</p>
+                        <p className='text-start'>Desenvolvedor Backend</p>
                         <ul className="list-disc list-inside text-xs mt-2">
                             <li className="mb-2">Desenvolvimento de APIs em Java com o framework Spring (Spring Boot, Spring Security e Spring Cloud).</li>
                             <li className="mb-2">Integração contínua e entrega contínua (CI/CD) com ferramentas como GitLab.</li>

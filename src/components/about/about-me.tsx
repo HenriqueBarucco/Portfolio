@@ -1,8 +1,8 @@
 export default function AboutMe() {
     return (
         <div className='flex flex-row'>
-            <div className='w-1/4'>
-                <p className='text-2xl font-bold justify-self-end'>SOBRE MIM</p>
+            <div className='w-1/4 pr-4'>
+                <p className='text-2xl font-bold text-end'>SOBRE MIM</p>
             </div>
             <div className='flex-1'>
                 <p>
