@@ -1,7 +1,7 @@
 export default function Experiences() {
     return (
         <div className='flex flex-row'>
-            <div className='w-1/4 pr-4'>
+            <div className='w-[160px] pr-4'>
                 <p className='text-1xl font-bold text-end'>EXPERIÊNCIAS</p>
             </div>
             <div className='flex-1 space-y-4'>

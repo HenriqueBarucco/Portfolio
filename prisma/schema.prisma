@@ -1,0 +1,88 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mysql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id           String       @id @default(uuid())
+    name         String
+    email        String       @unique
+    password     String
+    curriculumId String?
+    createdAt    DateTime     @default(now())
+    updatedAt    DateTime     @updatedAt
+    Curriculum   Curriculum[]
+
+    @@map("users_tbl")
+}
+
+model Curriculum {
+    id          String       @id @default(uuid())
+    user        User         @relation(fields: [userId], references: [id])
+    userId      String
+    createdAt   DateTime     @default(now())
+    updatedAt   DateTime     @updatedAt
+    aboutMe     String       @db.Text
+    skills      Skill[]
+    experiences Experience[]
+    educations  Education[]
+    projects    Project[]
+
+    @@map("curriculums_tbl")
+}
+
+model Skill {
+    id           String     @id @default(uuid())
+    curriculum   Curriculum @relation(fields: [curriculumId], references: [id])
+    curriculumId String
+    name         String
+    icon         String
+
+    @@map("skills_tbl")
+}
+
+model Experience {
+    id           String     @id @default(uuid())
+    curriculum   Curriculum @relation(fields: [curriculumId], references: [id])
+    curriculumId String
+    title        String
+    company      String
+    description  String
+    startDate    String
+    endDate      String
+
+    @@map("experiences_tbl")
+}
+
+model Education {
+    id           String     @id @default(uuid())
+    curriculum   Curriculum @relation(fields: [curriculumId], references: [id])
+    curriculumId String
+    title        String
+    school       String
+    description  String
+    startDate    String
+    endDate      String
+
+    @@map("educations_tbl")
+}
+
+model Project {
+    id           String     @id @default(uuid())
+    curriculum   Curriculum @relation(fields: [curriculumId], references: [id])
+    curriculumId String
+    title        String
+    description  String
+    image        String
+    url          String
+    github       String
+
+    @@map("projects_tbl")
+}

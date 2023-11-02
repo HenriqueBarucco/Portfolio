@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-export default function Main() {
+export default function Main({name, title}: {name: string, title: string}) {
     return (
         <div className='flex flex-row space-x-4 items-center h-[calc(100vh-20px)] justify-center'>
             <div className="avatar">
@@ -9,8 +9,8 @@ export default function Main() {
                 </div>
             </div>
             <div>
-                <h2 className='text-4xl font-bold'>Henrique Barucco</h2>
-                <p>Desenvolvedor Fullstack</p>
+                <h2 className='text-4xl font-bold'>{name}</h2>
+                <p>{title}</p>
             </div>
         </div>
     );
