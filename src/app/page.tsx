@@ -14,9 +14,9 @@ export default async function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
                 </svg>
                 <div className='flex bg-base-200 w-full justify-center items-center py-4'>
-                    <div className='flex flex-col w-3/6 justify-center space-y-10' id='sobre'>
+                    <div className='flex flex-col w-2/5 justify-center space-y-10' id='sobre'>
                         <AboutMe about={user.aboutMe}/>
-                        <Skills/>
+                        <Skills skills={user.skills}/>
                         <Experiences/>
                         <Education/>
                     </div>
@@ -30,4 +30,62 @@ const user = {
     name: 'Henrique Barucco',
     title: 'Desenvolvedor Fullstack',
     aboutMe: 'Sou um Desenvolvedor Full Stack apaixonado por tecnologia com uma habilidade comprovada em trabalhar em equipe, resolução de problemas e comunicação eficaz. Sempre buscando oportunidades para aprimorar minhas habilidades e oferecer soluções inovadoras para atender às expectativas dos clientes. Com uma mentalidade de crescimento constante, eu estou sempre em busca de novos desafios e oportunidades para expandir meus conhecimentos e habilidades.',
+    skills: [
+        {
+            name: 'Java',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg'
+        },
+        {
+            name: 'Javascript',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg'
+        },
+        {
+            name: 'Typescript',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg'
+        },
+        {
+            name: 'Golang',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg'
+        },
+        {
+            name: 'Python',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'
+        },
+        {
+            name: 'Spring',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg'
+        },
+        {
+            name: 'Nest',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg'
+        },
+        {
+            name: 'Next JS',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg'
+        },
+        {
+            name: 'Socket IO',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg'
+        },
+        {
+            name: 'Docker',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain.svg'
+        },
+        {
+            name: 'Kubernetes',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg'
+        },
+        {
+            name: 'Azure',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg'
+        },
+        {
+            name: 'Google Cloud',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg'
+        },
+        {
+            name: 'Jenkins',
+            icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg'
+        }
+    ]
 };
