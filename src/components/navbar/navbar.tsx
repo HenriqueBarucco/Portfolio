@@ -1,10 +1,21 @@
+"use client";
 import Link from 'next/link';
 import ChangeDarkmode from './change-darkmode';
 import EditDialog from '../dialog/edit-dialog';
+import { motion } from 'framer-motion';
 
 export default function Navbar() {
     return (
-        <div className="fixed navbar bg-base-100">
+        <motion.div 
+           className="fixed navbar bg-base-100"
+           initial="hidden"
+           whileInView="visible"
+           transition={{ once: true, amount: 0.5}}
+           variants={{
+             hidden: { opacity: 0, y: -50},
+             visible: { opacity: 1, y: 0}
+           }}
+        >
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -39,10 +50,10 @@ export default function Navbar() {
                     </li>
                 </ul>
             </div>
-            <div className="navbar-end space-x-3">
+            <div className="navbar-end w-1/2 space-x-3">
                 <ChangeDarkmode/>
                 <EditDialog/>
             </div>
-        </div>
+        </motion.div>
     );
 }

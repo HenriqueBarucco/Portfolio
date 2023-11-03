@@ -10,5 +10,22 @@ const config: Config = {
     daisyui: {
         themes: ['light', 'dark'],
     },
+    theme: {
+        extend: {
+          colors: {
+            'call-to-action': '#467e8b',
+          },
+          animation: {
+            'bounce-slow': 'bounce 3s linear infinite',
+          },
+          boxShadow: {
+            'call-to-action': '27px 22px 10px 0px #FFF'
+          }
+        },
+        screens: {
+          sm: "768px",
+          md: "1060px"
+        }
+    }
 };
 export default config;

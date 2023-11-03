@@ -19,10 +19,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
     return (
-        <html lang="pt-BR">
-            <body className="flex flex-col min-h-screen">
+        <html lang="pt-BR" className='w-full'>
+            <body className="flex flex-col min-h-screen w-full">
                 <Navbar/>
-                <main className="flex flex-grow">
+                <main className="flex flex-grow w-full">
                     {children}
                 </main>
                 <Footer/>
