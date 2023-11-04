@@ -1,14 +1,35 @@
+"use client";
+import { motion } from "framer-motion";
+
 export default function Experiences() {
     return (
-        <div className='flex flex-row'>
-            <div className='w-[160px] pr-4'>
-                <p className='text-1xl font-bold text-end'>EXPERIÊNCIAS</p>
-            </div>
-            <div className='flex-1 space-y-4'>
+        <div className='sm:flex flex-row'>
+            <motion.div 
+              className='sm:w-1/4 pr-4 mb-5 sm:mb-0'
+              initial="hidden"
+              whileInView="visible"
+              transition={{ once: true, amount: 0.5, delay: 1}}
+              variants={{
+                hidden: { opacity: 0, x: -50},
+                visible: { opacity: 1, x: 0}
+              }}
+            >
+                <p className='text-1xl font-bold text-center sm:text-end'>EXPERIÊNCIAS</p>
+            </motion.div>
+            <motion.div 
+              className='flex-1 space-y-4'
+              initial="hidden"
+              whileInView="visible"
+              transition={{ once: true, amount: 0.5, delay: 1}}
+              variants={{
+                hidden: { opacity: 0, x: 50},
+                visible: { opacity: 1, x: 0}
+              }}
+            >
                 <div className='flex flex-col'>
-                    <div className='flex flex-row w-full'>
-                        <p className='font-bold text-start'>GVD Soluções Inteligentes</p>
-                        <p className='grow text-end'>Agosto 2022 - Atual</p>
+                    <div className='sm:flex flex-row w-full mb-5'>
+                        <p className='font-bold text-center sm:text-start'>GVD Soluções Inteligentes</p>
+                        <p className='grow text-center sm:text-end'>Agosto 2022 - Atual</p>
                     </div>
                     <div>
                         <p className='text-start'>Desenvolvedor Backend</p>
@@ -23,9 +44,9 @@ export default function Experiences() {
                     </div>
                 </div>
                 <div className='flex flex-col'>
-                    <div className='flex flex-row w-full'>
-                        <p className='font-bold text-start'>Instituto Espirita Paulo de Tarso</p>
-                        <p className='grow text-end'>Outubro 2022 - Atual</p>
+                    <div className='sm:flex flex-row w-full mb-3 sm:mb-0'>
+                        <p className='font-bold text-center sm:text-start'>Instituto Espirita Paulo de Tarso</p>
+                        <p className='grow text-center sm:text-end'>Outubro 2022 - Atual</p>
                     </div>
                     <div>
                         <p className='text-start'>Iniciação Científica - Fullstack</p>
@@ -37,7 +58,7 @@ export default function Experiences() {
                         </ul>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     );
 }

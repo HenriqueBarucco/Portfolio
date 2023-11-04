@@ -14,7 +14,7 @@ export default async function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
                 </svg>
                 <div className='flex bg-base-200 w-full justify-center items-center py-4'>
-                    <div className='flex flex-col w-2/5 justify-center space-y-10' id='sobre'>
+                    <div className='sm:flex sm:flex-col items-center w-[70%] md:w-3/6 justify-center space-y-10' id='sobre'>
                         <AboutMe about={user.aboutMe}/>
                         <Skills skills={user.skills}/>
                         <Experiences/>
