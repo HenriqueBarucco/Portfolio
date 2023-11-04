@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 
-export default function AboutMe() {
+export default function AboutMe({about}: {about: string}) {
     return (
         <div className='sm:flex flex-row'>
             <motion.div 

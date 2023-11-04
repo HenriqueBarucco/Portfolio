@@ -28,7 +28,11 @@ export default function Navbar() {
                                 Sobre mim
                             </Link>
                         </li>
-                        <li><a>Projetos</a></li>
+                        <li>
+                            <Link href={'/projetos'}>
+                                Projetos
+                            </Link>
+                        </li>
                         <li>
                             <Link href={'/contato'}>
                                 Contato
@@ -42,7 +46,11 @@ export default function Navbar() {
                                 Sobre mim
                         </Link>
                     </li>
-                    <li><a>Projetos</a></li>
+                    <li>
+                        <Link href={'/projetos'}>
+                                Projetos
+                        </Link>
+                    </li>
                     <li>
                         <Link href={'/contato'}>
                                 Contato

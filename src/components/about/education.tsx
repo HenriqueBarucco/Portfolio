@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 
-export default function Education() {
+export default function Education({educations}: {educations: {title: string, school: string, description: string, startDate: string, endDate: string}[]}) {
     return (
         <div className='sm:flex flex-row'>
             <motion.div 
@@ -26,16 +26,18 @@ export default function Education() {
                 visible: { opacity: 1, x: 0}
               }}  
             >
-                <div className='flex flex-col'>
-                    <div className='sm:flex flex-row w-full'>
-                        <p className='font-bold text-center sm:text-start'>Estácio de Sá</p>
-                        <p className='grow text-center sm:text-end'>Fevereiro 2022 - Cursando 4º Semestre</p>
+                {educations.map((education, index) => (
+                    <div className='flex flex-col'key={index}>
+                        <div className='sm:flex flex-row w-full'>
+                            <p className='font-bold text-center sm:text-start'>{education.school}</p>
+                            <p className='grow text-center sm:text-end'>{education.startDate} - {education.endDate}</p>
+                        </div>
+                        <div>
+                            <p className='text-center sm:text-start'>{education.title}</p>
+                            <p className='text-center sm:text-start'>{education.description}</p>
+                        </div>
                     </div>
-                    <div>
-                        <p className='text-center sm:text-start'>Ciências da Computação</p>
-                        <p className='text-center sm:text-start'>Descrição</p>
-                    </div>
-                </div>
+                ))}
             </motion.div>
         </div>
     );

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-export default function Main() {
+export default function Main({name, title}: {name: string, title: string}) {
     const buttonText = "Entre em contato";
 
     return (
