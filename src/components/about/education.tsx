@@ -1,4 +1,4 @@
-export default function Education({educations}: {educations: {title: string, school: string, description: string, startDate: string, endDate: string}[]}) {
+export default function Education({educations}: {educations: {title: string, school: string, startDate: string, endDate: string}[]}) {
     return (
         <div className='flex flex-row'>
             <div className='w-[160px] pr-4'>
@@ -14,7 +14,6 @@ export default function Education({educations}: {educations: {title: string, sch
                         </div>
                         <div>
                             <p className='text-start'>{education.title}</p>
-                            <p className='text-start'>{education.description}</p>
                         </div>
                     </div>
                 ))}

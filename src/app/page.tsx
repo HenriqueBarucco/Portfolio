@@ -92,7 +92,6 @@ const user = {
         {
             title: 'Ciências da Computação',
             school: 'Estácio de Sá',
-            description: 'Estudante do 4º semestre de Ciências da Computação na Estácio de Sá, apaixonado por tecnologia e focado em programação, algoritmos e desenvolvimento de software. Interessado em inteligência artificial, segurança da informação e desenvolvimento web. Participante ativo de projetos acadêmicos, Hackathons e competições de programação.',
             startDate: 'Fevereiro 2022',
             endDate: 'Cursando 5º Semestre'
         }
