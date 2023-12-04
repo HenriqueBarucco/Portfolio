@@ -4,7 +4,6 @@ import Experiences from '@/components/about/experiences';
 import Skills from '@/components/about/skills';
 import Main from '@/components/main';
 
-
 export default async function Home() {
     return (
         <div className='grow'>
