@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
 import Navbar from '@/components/navbar/navbar';
 import Footer from '@/components/footer/footer';
+import { Providers } from '@/redux/provider';
 
 export const metadata: Metadata = {
     title: 'Henrique Barucco',
@@ -21,12 +22,14 @@ export default function RootLayout({
     return (
         <html lang="pt-BR">
             <body className="flex flex-col min-h-screen">
-                <Navbar/>
-                <main className="flex flex-grow">
-                    {children}
-                </main>
-                <Footer/>
-                <Analytics />
+                <Providers>
+                    <Navbar/>
+                    <main className="flex flex-grow">
+                        {children}
+                    </main>
+                    <Footer/>
+                    <Analytics />
+                </Providers>
             </body>
         </html>
     );

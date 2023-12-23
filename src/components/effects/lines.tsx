@@ -1,6 +1,7 @@
 'use client';
 import { useCallback } from 'react';
 import Particles from 'react-particles';
+import { useSelector } from 'react-redux';
 import type { Engine } from 'tsparticles-engine';
 import { loadSlim } from 'tsparticles-slim';
 
@@ -8,6 +9,7 @@ export default function LinesEffect() {
     const particlesInit = useCallback(async (engine: Engine) => {
         await loadSlim(engine);
     }, []);
+    const color = useSelector((state: any) => state.color.color);
 
     return (
         <Particles
@@ -39,10 +41,10 @@ export default function LinesEffect() {
                 },
                 particles: {
                     color: {
-                        value: '#ffffff',
+                        value: color,
                     },
                     links: {
-                        color: '#ffffff',
+                        color: color,
                         distance: 150,
                         enable: true,
                         opacity: 0.5,

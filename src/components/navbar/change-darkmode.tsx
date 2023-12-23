@@ -1,11 +1,14 @@
 'use client';
 
+import { setColor } from '@/redux/reducers/colorReducer';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 declare const document: any;
 
 export default function ChangeDarkmode() {
     const [theme, setTheme] = useState('dark');
+    const dispatch = useDispatch();
 
     const toggleTheme = () => {
         setTheme(theme === 'dark' ? 'light' : 'dark');
@@ -13,7 +16,8 @@ export default function ChangeDarkmode() {
 
     useEffect(() => {
         document.querySelector('html').setAttribute('data-theme', theme);
-    }, [theme]);
+        dispatch(setColor(theme === 'dark' ? '#ffffff' : '#242424'));
+    }, [theme, dispatch]);
 
     return (
         <a className="btn btn-sm" >
