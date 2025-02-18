@@ -71,7 +71,7 @@ const user = {
     },
     {
       name: 'Nest',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg',
+      icon: 'https://raw.githubusercontent.com/devicons/devicon/refs/tags/v2.16.0/icons/nestjs/nestjs-original.svg',
     },
     {
       name: 'Next JS',
