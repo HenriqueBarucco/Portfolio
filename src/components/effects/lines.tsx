@@ -16,6 +16,7 @@ export default function LinesEffect() {
     <Particles
       id="tsparticles"
       init={particlesInit}
+      className="-z-20"
       options={{
         fpsLimit: 120,
         interactivity: {

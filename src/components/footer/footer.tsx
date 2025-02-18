@@ -8,7 +8,7 @@ export default function Footer() {
           href={'https://github.com/HenriqueBarucco/Portfolio'}
           target="_blank"
         >
-          Copyright © 2023 - Henrique Barucco
+          Copyright © {new Date().getUTCFullYear()} - Henrique Barucco
         </Link>
       </aside>
       <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
