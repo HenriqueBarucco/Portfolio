@@ -1,21 +1,21 @@
-'use client';
+'use client'
 
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    color: '#fff',
-};
+  color: '#fff',
+}
 
 export const colorReducer = createSlice({
-    name: 'color',
-    initialState,
-    reducers: {
-        setColor: (state, action) => {
-            state.color = action.payload;
-        },
+  name: 'color',
+  initialState,
+  reducers: {
+    setColor: (state, action) => {
+      state.color = action.payload
     },
-});
+  },
+})
 
-export const { setColor } = colorReducer.actions;
+export const { setColor } = colorReducer.actions
 
-export default colorReducer.reducer;
+export default colorReducer.reducer
