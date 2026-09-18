@@ -12,12 +12,16 @@ export default function ChangeDarkmode() {
   const dispatch = useDispatch()
 
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
+    setTheme(theme === 'dark'
+      ? 'light'
+      : 'dark')
   }
 
   useEffect(() => {
     document.querySelector('html').setAttribute('data-theme', theme)
-    dispatch(setColor(theme === 'dark' ? '#ffffff' : '#242424'))
+    dispatch(setColor(theme === 'dark'
+      ? '#ffffff'
+      : '#242424'))
   }, [theme, dispatch])
 
   return (

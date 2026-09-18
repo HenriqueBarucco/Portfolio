@@ -1,24 +1,25 @@
-FROM node:22.3.0-alpine AS build
+FROM node:26.9.0-alpine AS build
 
 WORKDIR /app
 
-RUN npm i -g pnpm
+RUN npm install --global pnpm@12.4.2
 
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+RUN pnpm install --frozen-lockfile
 
 COPY . .
 
 RUN pnpm build
 
-FROM node:22.3.0-alpine AS production
+FROM node:26.9.0-alpine AS production
 
 WORKDIR /app
 
-RUN npm i -g pnpm
+RUN npm install --global pnpm@12.4.2
 
 COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/package.json ./package.json
+COPY --from=build /app/pnpm-workspace.yaml ./pnpm-workspace.yaml
 COPY --from=build /app/.next ./.next
 
 COPY --from=build /app/next.config.js ./

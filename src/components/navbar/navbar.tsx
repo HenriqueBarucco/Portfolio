@@ -29,25 +29,25 @@ export default function Navbar() {
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <Link href={'/#sobre'}>Sobre mim</Link>
+              <Link href="/#sobre">Sobre mim</Link>
             </li>
             <li>
-              <Link href={'/projetos'}>Projetos</Link>
+              <Link href="/projetos">Projetos</Link>
             </li>
             <li>
-              <Link href={'/contato'}>Contato</Link>
+              <Link href="/contato">Contato</Link>
             </li>
           </ul>
         </div>
         <ul className="menu menu-horizontal px-1 hidden lg:flex">
           <li>
-            <Link href={'/#sobre'}>Sobre mim</Link>
+            <Link href="/#sobre">Sobre mim</Link>
           </li>
           <li>
-            <Link href={'/projetos'}>Projetos</Link>
+            <Link href="/projetos">Projetos</Link>
           </li>
           <li>
-            <Link href={'/contato'}>Contato</Link>
+            <Link href="/contato">Contato</Link>
           </li>
         </ul>
       </div>

@@ -1,0 +1,7 @@
+allowBuilds:
+  '@prisma/engines': true
+  '@tsparticles/engine': true
+  prisma: true
+  unrs-resolver: true
+minimumReleaseAgeExclude:
+  - daisyui@5.7.42
