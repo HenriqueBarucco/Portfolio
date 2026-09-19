@@ -11,7 +11,8 @@
     "start:dev": "next dev --turbo",
     "start": "next start",
     "build": "next build",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "node --experimental-default-type=module --experimental-strip-types --test test/*.test.mts"
   },
   "dependencies": {
     "@opentelemetry/api": "^1.9.1",

@@ -1,46 +1,160 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import type { Project as ProjectData } from '@/data/portfolio'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function Project({ project }: any) {
-  return (
-    <div className="flex flex-col lg:flex-row bg-base-200 w-full lg:w-3/5 rounded-lg mx-auto">
-      <div className="w-full lg:w-1/2">
-        <Image
-          src={project.image}
-          alt="Henrique Barucco"
-          width={650}
-          height={300}
-          className="rounded-2xl m-4 object-cover"
-        />
+function ProjectVisual({ project }: { project: ProjectData }) {
+  if (project.image) {
+    return (
+      <Image
+        src={project.image}
+        alt={project.imageAlt || `Prévia do projeto ${project.title}`}
+        fill
+        sizes="(min-width: 1024px) 72rem, 100vw"
+        className="object-contain bg-base-100"
+      />
+    )
+  }
+
+  const visualContent = {
+    automation: (
+      <div className="w-full max-w-xs space-y-3">
+        <p className="font-mono text-xs text-primary">task.pipeline</p>
+        {['observa', 'avalia', 'age'].map((step, index) => (
+          <div className="flex items-center gap-3" key={step}>
+            <span className="flex size-7 items-center justify-center rounded-full border border-primary/50 text-xs text-primary">
+              0{index + 1}
+            </span>
+            <span className="h-px flex-1 bg-primary/40" />
+            <span className="font-mono text-sm">{step}</span>
+          </div>
+        ))}
       </div>
-      <div className="flex flex-col w-full p-7 ml-4">
-        <h2 className="text-4xl font-bold mb-4">{project.title}</h2>
-        <p className="mb-4 flex-grow">{project.description}</p>
-        <div className="flex flex-row items-center justify-start">
-          <p className="flex-grow">
-            Acesse em:
-            <Link href={project.url} target="_blank">
-              <p className="mr-4">{project.url}</p>
-            </Link>
-          </p>
-          {project.github && (
-            <Link href={project.github} target="_blank">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                x="0px"
-                y="0px"
-                width="34"
-                height="34"
-                viewBox="0 0 64 64"
-                className="fill-current hover:fill-black transition-color duration-300"
-              >
-                <path d="M32 6C17.641 6 6 17.641 6 32c0 12.277 8.512 22.56 19.955 25.286-.592-.141-1.179-.299-1.755-.479V50.85c0 0-.975.325-2.275.325-3.637 0-5.148-3.245-5.525-4.875-.229-.993-.827-1.934-1.469-2.509-.767-.684-1.126-.686-1.131-.92-.01-.491.658-.471.975-.471 1.625 0 2.857 1.729 3.429 2.623 1.417 2.207 2.938 2.577 3.721 2.577.975 0 1.817-.146 2.397-.426.268-1.888 1.108-3.57 2.478-4.774-6.097-1.219-10.4-4.716-10.4-10.4 0-2.928 1.175-5.619 3.133-7.792C19.333 23.641 19 22.494 19 20.625c0-1.235.086-2.751.65-4.225 0 0 3.708.026 7.205 3.338C28.469 19.268 30.196 19 32 19s3.531.268 5.145.738c3.497-3.312 7.205-3.338 7.205-3.338.567 1.474.65 2.99.65 4.225 0 2.015-.268 3.19-.432 3.697C46.466 26.475 47.6 29.124 47.6 32c0 5.684-4.303 9.181-10.4 10.4 1.628 1.43 2.6 3.513 2.6 5.85v8.557c-.576.181-1.162.338-1.755.479C49.488 54.56 58 44.277 58 32 58 17.641 46.359 6 32 6zM33.813 57.93C33.214 57.972 32.61 58 32 58 32.61 58 33.213 57.971 33.813 57.93zM37.786 57.346c-1.164.265-2.357.451-3.575.554C35.429 57.797 36.622 57.61 37.786 57.346zM32 58c-.61 0-1.214-.028-1.813-.07C30.787 57.971 31.39 58 32 58zM29.788 57.9c-1.217-.103-2.411-.289-3.574-.554C27.378 57.61 28.571 57.797 29.788 57.9z" />
-              </svg>
-            </Link>
-          )}
+    ),
+    finance: (
+      <div className="w-full max-w-sm rounded-2xl border border-base-content/10 bg-base-100 p-5 shadow-xl">
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2 font-semibold">
+            <span className="flex size-7 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-content">
+              H
+            </span>
+            Horizonte
+          </div>
+          <span className="rounded-full bg-warning/15 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-warning">
+            Dados demonstrativos
+          </span>
+        </div>
+        <p className="mt-6 text-xs font-medium uppercase tracking-[0.14em] text-base-content/55">
+          Projeção mensal
+        </p>
+        <div className="mt-3 rounded-xl bg-base-200 p-4">
+          <p className="text-xs text-base-content/60">Saldo projetado</p>
+          <p className="mt-1 text-2xl font-bold tracking-tight">R$ 1.280,00</p>
+          <div className="mt-4 grid grid-cols-2 gap-3 border-t border-base-content/10 pt-3 text-xs">
+            <div>
+              <p className="text-base-content/55">Entradas</p>
+              <p className="mt-1 font-semibold text-success">R$ 5.400,00</p>
+            </div>
+            <div>
+              <p className="text-base-content/55">Comprometido</p>
+              <p className="mt-1 font-semibold">R$ 4.120,00</p>
+            </div>
+          </div>
+        </div>
+        <div className="mt-4 space-y-2 text-xs">
+          {[
+            ['Moradia', 'R$ 1.700,00'],
+            ['Mercado', 'R$ 820,00'],
+            ['Reserva', 'R$ 1.600,00'],
+          ].map(([category, value]) => (
+            <div className="flex items-center justify-between" key={category}>
+              <span className="text-base-content/60">{category}</span>
+              <span className="font-medium">{value}</span>
+            </div>
+          ))}
         </div>
       </div>
+    ),
+    messaging: (
+      <div className="grid w-full max-w-xs grid-cols-2 gap-3 font-mono text-xs">
+        <span className="rounded border border-primary/50 bg-primary/10 p-4">instance</span>
+        <span className="rounded border border-primary/50 bg-primary/10 p-4">event</span>
+        <span className="rounded border border-primary/50 bg-primary/10 p-4">queue</span>
+        <span className="rounded border border-primary/50 bg-primary/10 p-4">subscriber</span>
+      </div>
+    ),
+    observability: (
+      <div className="w-full max-w-xs space-y-5">
+        <div className="flex items-center justify-between font-mono text-xs text-primary">
+          <span>usage.snapshot</span>
+          <span>live</span>
+        </div>
+        <div className="grid grid-cols-10 items-end gap-1">
+          {[18, 30, 25, 48, 43, 62, 55, 79, 70, 91].map((height, index) => (
+            <span className="rounded-sm bg-primary/70" key={index} style={{ height: `${height}px` }} />
+          ))}
+        </div>
+        <div className="h-px bg-primary/40" />
+      </div>
+    ),
+  }[project.visual]
+
+  return (
+    <div
+      className="flex h-full min-h-64 items-center justify-center bg-base-300 px-8 py-10 text-base-content"
+      role="img"
+      aria-label={`Visual conceitual do projeto ${project.title}`}
+    >
+      <div aria-hidden="true">{visualContent}</div>
     </div>
+  )
+}
+
+export default function Project({ project }: { project: ProjectData }) {
+  const visualClassName = 'relative aspect-[16/10] border-b border-base-300 bg-base-300'
+
+  return (
+    <article className="group overflow-hidden rounded-2xl border border-base-300 bg-base-200">
+      <div className={visualClassName}>
+        <ProjectVisual project={project} />
+      </div>
+      <div className="flex min-w-0 flex-col p-6 sm:p-8">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
+            {project.category}
+          </p>
+          <span className="rounded-full border border-base-content/15 px-3 py-1 text-xs font-medium text-base-content/70">
+            {project.visibility}
+          </span>
+        </div>
+        <h2 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl">{project.title}</h2>
+        <p className="mt-4 max-w-2xl text-base leading-7 text-base-content/75">{project.description}</p>
+        <ul className="mt-6 flex flex-wrap gap-2" aria-label={`Tecnologias usadas em ${project.title}`}>
+          {project.technologies.map((technology) => (
+            <li className="rounded-full bg-base-300 px-3 py-1 text-xs font-medium text-base-content/75" key={technology}>
+              {technology}
+            </li>
+          ))}
+        </ul>
+        <div className="mt-8 flex flex-wrap items-center gap-3">
+          {project.links.length > 0
+            ? project.links.map((link) => (
+              <Link
+                className="btn btn-sm btn-outline min-h-11 px-4"
+                href={link.href}
+                key={link.href}
+                rel="noreferrer"
+                target="_blank"
+              >
+                {link.label}
+              </Link>
+              ))
+            : (
+              <Link className="text-sm font-medium text-primary underline-offset-4 hover:underline" href="/contato">
+                Detalhes técnicos sob demanda
+              </Link>
+              )}
+        </div>
+      </div>
+    </article>
   )
 }

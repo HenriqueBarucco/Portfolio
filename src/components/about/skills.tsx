@@ -1,26 +1,26 @@
 import SkillIcon from './skill-icon'
+import type { Skill } from '@/data/portfolio'
 
 export default function Skills({
   skills,
 }: {
-  skills: { name: string; icon: string }[]
+  skills: readonly Skill[]
 }) {
   return (
-    <div className="flex flex-row">
-      <div className="w-[160px] pr-4">
-        <p className="text-1xl font-bold text-end">HABILIDADES</p>
+    <section className="grid gap-5 lg:grid-cols-[11rem_minmax(0,1fr)] lg:gap-10" aria-labelledby="skills-heading">
+      <div>
+        <h2
+          className="text-sm font-bold uppercase tracking-[0.18em] text-primary lg:text-right"
+          id="skills-heading"
+        >
+          Stack
+        </h2>
       </div>
-      <div className="flex-1">
-        <div className="flex flex-row justify-around">
-          <div className="grid grid-cols-5 grid-rows-3 gap-4">
-            {skills.map((skill, index) => (
-              <div key={index} className="col-span-1 row-span-1">
-                <SkillIcon language={skill.name} img={skill.icon} />
-              </div>
-            ))}
-          </div>
-        </div>
+      <div className="grid max-w-3xl grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-3">
+        {skills.map((skill) => (
+          <SkillIcon key={skill.name} language={skill.name} img={skill.icon} />
+        ))}
       </div>
-    </div>
+    </section>
   )
 }

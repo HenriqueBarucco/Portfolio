@@ -5,8 +5,9 @@ import Footer from '@/components/footer/footer'
 import { Providers } from '@/redux/provider'
 
 export const metadata: Metadata = {
-  title: 'Henrique Barucco',
-  description: 'Portfólio de Henrique Barucco - Desenvolvedor Fullstack',
+  title: 'Henrique Barucco — Desenvolvedor Backend Sênior',
+  description:
+    'Portfólio de Henrique Barucco, Desenvolvedor Backend Sênior especializado em sistemas distribuídos, integrações e plataformas confiáveis.',
   robots: {
     index: true,
     follow: true,

@@ -1,39 +1,27 @@
 import Project from '@/components/project/project'
+import { portfolio } from '@/data/portfolio'
 
 export default function Projects() {
   return (
-    <div className="grow">
-      <div className="flex flex-col items-center justify-start h-full space-y-6 pt-28">
-        {projects.map((project, index) => (
-          <Project key={index} project={project} />
-        ))}
+    <section className="w-full grow px-5 pb-20 pt-28 sm:px-8 lg:px-12" aria-labelledby="projects-heading">
+      <div className="mx-auto w-full max-w-6xl">
+        <header className="mb-12 max-w-2xl sm:mb-16">
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-primary">
+            Seleção de produtos
+          </p>
+          <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl" id="projects-heading">
+            Projetos em destaque
+          </h1>
+          <p className="mt-4 text-base leading-7 text-base-content/75 sm:text-lg">
+            Produtos públicos, internos e experimentais que refletem minha atuação em backend, automação e plataformas orientadas a eventos.
+          </p>
+        </header>
+        <div className="space-y-8 sm:space-y-10">
+          {portfolio.projects.map((project) => (
+            <Project key={project.title} project={project} />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
-
-const projects = [
-  {
-    title: 'Easy WhatsApp',
-    description: `
-        Este projeto consiste em um serviço de envio de mensagens utilizando o WhatsApp, no qual o usuário consegue se cadastrar e ter a sua própria instância de WhatsApp para utilizar como quiser, seja pela versão web do projeto Easy-WhatsApp ou pela API para ser integrada em qualquer que seja o projeto.
-        O projeto já está em produção e pode ser utilizado por vocÊ agora mesmo! basta acessar o link abaixo e se cadastrar.
-        O projeto foi desenvolvido utilizando o framework Nest para o backend e o framework Next JS para o frontend. O banco de dados utilizado foi o MariaDB. O projeto foi desenvolvido utilizando o Docker para facilitar a implantação e o desenvolvimento.
-        `,
-    image: '/easy-whatsapp.png',
-    url: 'https://easy-whatsapp.henriquebarucco.com.br',
-    github: 'https://github.com/HenriqueBarucco/Easy-Whatsapp-Frontend',
-  },
-  {
-    title: 'IEPT - Gerenciador de Aulas',
-    description: `
-        Este projeto foi realizado como Iniciação Cientifica no Instituto Espirita Paulo de Tarso, o projeto consiste em um gerenciador de aulas para o Instituto, onde os professores podem criar o planejamento das aulas.
-        Para então seguir o ano letivo seguindo o EBAC.
-        Juntamente com esse controle é possível a gestão da escola realizar diversas métricas sobre como está sendo abordados os diferentes campos do conhecimento
-        O projeto foi desenvolvido utilizando o framework Spring Boot para o backend e o framework Next JS para o frontend. O banco de dados utilizado foi o MariaDB.
-        `,
-    image: '/iept.png',
-    url: 'https://iept.henriquebarucco.com.br',
-    github: null,
-  },
-]

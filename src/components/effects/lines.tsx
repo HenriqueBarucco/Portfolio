@@ -16,7 +16,7 @@ export default function LinesEffect() {
     <ParticlesProvider init={particlesInit}>
       <Particles
         id="tsparticles"
-        className="-z-20"
+        className="pointer-events-none absolute inset-0 -z-10"
         options={{
           fpsLimit: 120,
           interactivity: {
